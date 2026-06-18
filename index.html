@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Prajukta ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(-45deg,#0f172a,#1e293b,#4c1d95,#be185d);
+background-size:400% 400%;
+animation:gradient 15s ease infinite;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+min-height:100vh;
+}
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:1;}
+
+/* Game Container Entry */
+.game-container {
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+position:relative;
+z-index:2;
+}
+
+/* Glassmorphic Aesthetic */
+.glass{
+width:min(95%,550px);
+margin:25px auto;
+padding:30px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.2);
+border-radius:30px;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,0.35);
+}
+
+/* Main Hidden Dashboard */
+#main-content {
+max-width:1100px;
+margin:0 auto;
+padding:20px;
+position:relative;
+z-index:2;
+}
+
+.hero{text-align:center;padding:60px 20px 30px 20px}
+h1{font-size:3.2rem;text-shadow:0 0 25px #f472b6;margin-bottom:10px;}
+.hidden{display:none;}
+
+.typewriter{
+overflow:hidden;white-space:nowrap;border-right:3px solid #fff;
+display:inline-block;animation:typing 4s steps(40,end),blink .8s infinite;
+font-size:1.3rem;
+letter-spacing: 0.5px;
+}
+@keyframes typing{from{width:0}to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+
+/* Performance Optimized Buttons */
+.btn{
+background:white;
+color:#be185d;
+border:none;
+padding:14px 24px;
+border-radius:50px;
+font-weight:bold;
+margin:10px;
+cursor:pointer;
+font-size:1rem;
+transition:transform 0.2s, box-shadow 0.2s;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+.btn:hover{transform:scale(1.05);box-shadow:0 8px 20px rgba(254,116,182,0.4);}
+.btn-purple {
+background:#9333ea;
+color:white;
+}
+
+/* Ultra Smooth Carousel */
+.gallery-wrapper {
+width:100%;
+max-width:400px;
+margin:15px auto;
+}
+.gallery{
+position:relative;
+height:500px;
+overflow:hidden;
+border-radius:25px;
+border:4px solid rgba(255,255,255,0.8);
+box-shadow:0 12px 30px rgba(0,0,0,0.4);
+}
+.gallery img{
+position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+opacity:0;transition:opacity 1.2s ease-in-out;
+}
+.gallery img.active {opacity:1;}
+
+p{line-height:1.7;margin:15px 0;font-size:1.05rem;}
+#letter,#gift{display:none;margin-top:15px;line-height:1.8;padding:20px;background:rgba(0,0,0,0.2);border-radius:20px;border:1px solid rgba(255,255,255,0.1);text-align:left;}
+.count{font-size:1.5rem;font-weight:bold;letter-spacing:1px;color:#fbcfe8;}
+.cake{font-size:6rem;animation:bounce 2s infinite;margin-bottom:10px;}
+@keyframes bounce {0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* Clean Connected Timeline */
+.timeline div{padding:15px;border-left:4px solid #f472b6;margin:15px 0;text-align:left;background:rgba(255,255,255,0.05);border-radius:0 15px 15px 0;}
+
+/* Floating Streamers */
+.float{position:fixed;top:-50px;animation:fall linear infinite;pointer-events:none;z-index:0;}
+@keyframes fall{to{transform:translateY(120vh);opacity:0;}}
+</style>
+</head>
+<body>
+
+<canvas id="fw"></canvas>
+<div id="floater-container"></div>
+
+<div id="quiz-flow" class="game-container">
+    <div id="s1" class="glass">
+        <h2>💌 Hey Prajukta...</h2>
+        <p>I created something incredibly special just for you.<br>Would you like to step inside? ❤️</p>
+        <button class="btn" onclick="nextStage('s2')">Of course 🥰</button>
+        <button class="btn" onclick="alert('Access denied 😂 Only the birthday girl is allowed past this point!')">No 😔</button>
+    </div>
+
+    <div id="s2" class="glass hidden">
+        <h2>🐼 Quick Question</h2>
+        <p>Are you secretly a panda?</p>
+        <button class="btn" onclick="nextStage('s3')">Yes, and I'm adorable 🐼</button>
+        <button class="btn" onclick="alert('Then why are you constantly stealing my heart? ❤️ Try again!')">No 😌</button>
+    </div>
+
+    <div id="s3" class="glass hidden">
+        <h2>👑 Final Verification</h2>
+        <p>Who is officially the prettiest girl in the entire world?</p>
+        <button class="btn" onclick="unlockBirthday()">Prajukta ❤️</button>
+        <button class="btn" onclick="alert('System Error: Incorrect Answer! 😜 Try that again.')">Someone Else</button>
+    </div>
+</div>
+
+<div id="main-content" class="hidden">
+    
+    <section class="hero">
+        <h1>🎉 Happy Birthday Prajukta ❤️</h1>
+        <h2 class="typewriter">You are my favorite person, my happiness, my everything ✨</h2>
+    </section>
+
+    <div class="glass count">
+        ⏳ Countdown To Your Big Day: <span id="count">00d 00h 00m</span>
+    </div>
+
+    <div class="glass" style="max-width: 650px;">
+        <h2>📸 Our Beautiful Memories</h2>
+        <div class="gallery-wrapper">
+            <div class="gallery" id="slideshow">
+                <img src="photo1.jpg" class="active" alt="Memory 1">
+                <img src="photo2.jpg" alt="Memory 2">
+                <img src="photo3.jpg" alt="Memory 3">
+                <img src="photo4.jpg" alt="Memory 4">
+                <img src="photo5.jpg" alt="Memory 5">
+                <img src="photo6.jpg" alt="Memory 6">
+            </div>
+        </div>
+        <p style="color:#f472b6; font-weight:500;">Every single picture tells a story of us. ✨</p>
+    </div>
+
+    <div class="glass" style="max-width: 650px;">
+        <h2>💖 Our Beautiful Journey</h2>
+        <div class="timeline">
+            <div>👶 <strong>Little Panda Days:</strong> From cute baby pictures and early smiles that lit up the room.</div>
+            <div>🌹 <strong>The Moments We Shared:</strong> Dressed up in gorgeous traditional attire, capturing memories side-by-side.</div>
+            <div>🌙 <strong>Midnight Magic:</strong> Standing under the quiet night sky, watching the moon together on open roads.</div>
+            <div>⛰️ <strong>To the Horizons:</strong> Looking out over hilltops, mountain views, and endless green spaces with you.</div>
+            <div>🎂 <strong>Today & Forever:</strong> Celebrating the phenomenal person you are right now.</div>
+        </div>
+    </div>
+
+    <div class="glass" style="max-width: 650px;">
+        <h2>💌 Heartfelt Note</h2><br>
+        <button class="btn btn-purple" onclick="toggleLetter()">Open Your Letter 💌</button>
+        <div id="letter">
+            <p style="font-size: 1.1rem; margin-bottom: 10px; color: #fbcfe8;"><strong>Happy Birthday, Princess. 👑🎂</strong></p>
+            <p>Thank you for filling my life with pure happiness, endless warmth, and unwavering love. Your smile brightens up my darkest days, and every second spent next to you feels absolutely magical.</p>
+            <p style="margin-top: 12px; font-style: italic; color: #f472b6;">"And just like the song says... I found the girl I was looking for." ❤️</p>
+            <p style="margin-top: 12px;">May this year treat you to infinite joy, grand success, and unforgettable moments. May every dream you hold close come completely true! 💜</p>
+        </div>
+    </div>
+
+    <div class="glass" style="max-width: 450px;">
+        <div class="cake">🎂</div>
+        <h2>Make A Wish ✨</h2>
+        <p>Close your eyes, make a beautiful wish, and blow out the candles!</p>
+    </div>
+
+    <div class="glass" style="max-width: 450px;">
+        <h2>🎁 Surprise Gift</h2><br>
+        <button class="btn btn-purple" onclick="revealGift()">Open Gift</button>
+        <div id="gift" style="text-align: center; font-size: 1.1rem; color: #fbcfe8;">
+            💎 The greatest gift I will ever have in this life is YOU, Prajukta 💜
+        </div>
+    </div>
+
+</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Toggle steps through the opening quiz
+function nextStage(id){
+    document.querySelectorAll('#quiz-flow > div').forEach(d => d.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+}
+
+// Unlocks dashboard, triggers playback and canvas frameworks
+function unlockBirthday(){
+    document.getElementById('quiz-flow').classList.add('hidden');
+    document.getElementById('main-content').classList.remove('hidden');
+    
+    // Play audio natively on user unlock trigger
+    let audio = document.getElementById('music');
+    audio.play().catch(err => console.log("Audio waiting for full interaction layer."));
+    
+    startSlideshow();
+    startFloatingRain();
+    startCanvasFireworks();
+}
+
+// Reveal mechanics
+function toggleLetter(){
+    let x = document.getElementById('letter');
+    x.style.display = (x.style.display === 'block') ? 'none' : 'block';
+}
+
+// Gift Reveal
+function revealGift(){
+    document.getElementById('gift').style.display = 'block';
+}
+
+// Highly accurate down-to-the-minute timer logic 
+// Targets July 1st
+const target = new Date(new Date().getFullYear(), 6, 1); 
+setInterval(()=>{
+    let diff = target - new Date();
+    if (diff < 0) {
+        document.getElementById('count').innerHTML = "It's your special day! 🎉";
+        return;
+    }
+    let days = Math.floor(diff / 86400000);
+    let hours = Math.floor((diff % 86400000) / 3600000);
+    let mins = Math.floor((diff % 3600000) / 60000);
+    document.getElementById('count').innerHTML = days + 'd ' + hours + 'h ' + mins + 'm';
+}, 1000);
+
+// Carousel Slideshow Controller
+function startSlideshow() {
+    let images = document.querySelectorAll('#slideshow img');
+    let index = 0;
+    setInterval(() => {
+        images[index].classList.remove('active');
+        index = (index + 1) % images.length;
+        images[index].classList.add('active');
+    }, 3000);
+}
+
+// Layered Ambient Floating Streamers
+function startFloatingRain() {
+    const container = document.getElementById('floater-container');
+    setInterval(() => {
+        let e = document.createElement('div');
+        e.className = 'float';
+        // Randomize between hearts and celebratory star particles
+        e.innerHTML = Math.random() > 0.5 ? '❤️' : (Math.random() > 0.3 ? '💜' : '✨');
+        e.style.left = Math.random() * 100 + 'vw';
+        e.style.fontSize = (Math.random() * 18 + 14) + 'px';
+        e.style.animationDuration = (6 + Math.random() * 5) + 's';
+        container.appendChild(e);
+        
+        setTimeout(() => e.remove(), 10000);
+    }, 350);
+}
+
+// Particle Canvas Fireworks Engine
+let canvasActive = false;
+function startCanvasFireworks() {
+    if(canvasActive) return;
+    canvasActive = true;
+    const c = document.getElementById('fw'), ctx = c.getContext('2d');
+    function resize(){c.width = window.innerWidth; c.height = window.innerHeight;}
+    resize();
+    window.onresize = resize;
+    
+    let dots = [];
+    setInterval(() => {
+        let originX = Math.random() * c.width;
+        let originY = Math.random() * (c.height * 0.6);
+        for(let i=0; i<25; i++) {
+            dots.push({
+                x: originX,
+                y: originY,
+                vx: (Math.random() - 0.5) * 5,
+                vy: (Math.random() - 0.5) * 5,
+                alpha: 60
+            });
+        }
+    }, 1200);
+
+    function render(){
+        ctx.clearRect(0, 0, c.width, c.height);
+        dots.forEach((p, index) => {
+            ctx.fillStyle = `rgba(244, 114, 182, ${p.alpha / 60})`;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 2.5, 0, 6.28);
+            ctx.fill();
+            p.x += p.vx;
+            p.y += p.vy;
+            p.alpha--;
+            if(p.alpha < 1) dots.splice(index, 1);
+        });
+        requestAnimationFrame(render);
+    }
+    render();
+}
+</script>
+</body>
+</html>
